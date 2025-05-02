@@ -115,10 +115,6 @@
       display: none; /* Initially hidden */
       margin-top: 1.5rem;
     }
-
-    .show-button {
-      display: inline-block;
-    }
   </style>
 </head>
 <body>
@@ -150,7 +146,7 @@
   <section id="merch">
     <h2>Merch</h2>
     <p>Discover unique merchandise crafted with magic and creativity.</p>
-    <!-- Initially hidden Redbubble button -->
+    <!-- Redbubble Shop Button (hidden initially) -->
     <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button">Visit Our Redbubble Shop</a>
   </section>
 
@@ -164,18 +160,20 @@
   </footer>
 
   <script>
-    // Smooth scroll to the "Merch" section and show the Redbubble button
+    // Function to handle the click on "Shop Merch" button and scroll to the Merch section
     document.getElementById('shopMerchButton').addEventListener('click', function(e) {
-      e.preventDefault();
+      e.preventDefault(); // Prevent the default anchor behavior
 
       // Smooth scroll to the "Merch" section
-      document.getElementById('merch').scrollIntoView({ behavior: 'smooth' });
+      document.querySelector('#merch').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
 
-      // Show the "Visit Our Redbubble Shop" button after scrolling
-      const redbubbleLink = document.getElementById('redbubbleShopLink');
+      // Display the "Visit Our Redbubble Shop" button after scrolling
       setTimeout(function() {
-        redbubbleLink.style.display = 'inline-block'; // Show the button
-      }, 600); // Added a slight delay after scroll
+        document.getElementById('redbubbleShopLink').style.display = 'inline-block';
+      }, 600); // 600ms delay after scroll (adjustable)
     });
   </script>
 </body>
