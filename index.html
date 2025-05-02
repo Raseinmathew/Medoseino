@@ -110,6 +110,11 @@
     .merch-button:hover {
       background: #5af;
     }
+
+    .highlight {
+      background-color: #ff0; /* Highlight color */
+      transition: background-color 0.3s;
+    }
   </style>
 </head>
 <body>
@@ -117,7 +122,7 @@
     <h1>Medoseino</h1>
     <nav>
       <a href="#books">Books</a>
-      <a href="#merch">Merch</a>
+      <a href="#merch" id="shopMerchButton">Merch</a>
       <a href="#ai">AI Assistant</a>
     </nav>
   </header>
@@ -128,7 +133,7 @@
     <p>Welcome to Medoseino — a portal to mystical stories and imaginative merchandise.</p>
     <div class="buttons">
       <a href="#books">Explore Books</a>
-      <a href="#merch">Shop Merch</a>
+      <a href="#merch" id="shopMerchLink">Shop Merch</a>
       <a href="#ai">Talk to the AI</a>
     </div>
   </section>
@@ -141,6 +146,8 @@
   <section id="merch">
     <h2>Merch</h2>
     <p>Discover unique merchandise crafted with magic and creativity.</p>
+    <!-- Add the Redbubble link here with an ID -->
+    <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button">Visit Our Redbubble Shop</a>
   </section>
 
   <section id="ai">
@@ -151,5 +158,23 @@
   <footer>
     &copy; 2025 Medoseino. All rights reserved.
   </footer>
+
+  <script>
+    // Smooth scroll to the "Merch" section and highlight the Redbubble link
+    document.getElementById('shopMerchButton').addEventListener('click', function(e) {
+      e.preventDefault();
+      // Smooth scroll to the merch section
+      document.getElementById('merch').scrollIntoView({ behavior: 'smooth' });
+      
+      // Add highlight class to the Redbubble button
+      const redbubbleLink = document.getElementById('redbubbleShopLink');
+      redbubbleLink.classList.add('highlight');
+      
+      // Remove highlight after 2 seconds
+      setTimeout(() => {
+        redbubbleLink.classList.remove('highlight');
+      }, 2000);
+    });
+  </script>
 </body>
 </html>
