@@ -104,16 +104,25 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      transition: background 0.3s;
+      transition: background 0.3s, opacity 0.5s ease-in-out;
+      opacity: 0;
+      visibility: hidden;
     }
 
-    .merch-button:hover {
-      background: #5af;
+    .merch-button.visible {
+      opacity: 1;
+      visibility: visible;
     }
 
-    #redbubbleShopLink {
-      display: none; /* Initially hidden */
-      margin-top: 1.5rem;
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .buttons a {
+        padding: 0.5rem 1rem;
+      }
     }
   </style>
 </head>
@@ -121,9 +130,9 @@
   <header>
     <h1>Medoseino</h1>
     <nav>
-      <a href="#books">Books</a>
-      <a href="#merch" id="shopMerchButton">Merch</a>
-      <a href="#ai">AI Assistant</a>
+      <a href="#books" aria-label="View Books">Books</a>
+      <a href="#merch" id="shopMerchButton" aria-label="View Merchandise">Merch</a>
+      <a href="#ai" aria-label="Talk to the AI Assistant">AI Assistant</a>
     </nav>
   </header>
 
@@ -132,9 +141,9 @@
     <h2>Books & Merch from Another Realm</h2>
     <p>Welcome to Medoseino — a portal to mystical stories and imaginative merchandise.</p>
     <div class="buttons">
-      <a href="#books">Explore Books</a>
-      <a href="#merch" id="shopMerchLink">Shop Merch</a>
-      <a href="#ai">Talk to the AI</a>
+      <a href="#books" aria-label="Explore Our Books">Explore Books</a>
+      <a href="#merch" id="shopMerchLink" aria-label="Shop Merchandise">Shop Merch</a>
+      <a href="#ai" aria-label="Talk to the AI Assistant">Talk to the AI</a>
     </div>
   </section>
 
@@ -147,7 +156,7 @@
     <h2>Merch</h2>
     <p>Discover unique merchandise crafted with magic and creativity.</p>
     <!-- Redbubble Shop Button (hidden initially) -->
-    <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button">Visit Our Redbubble Shop</a>
+    <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button" aria-label="Visit Our Redbubble Store">Visit Our Redbubble Shop</a>
   </section>
 
   <section id="ai">
@@ -160,20 +169,25 @@
   </footer>
 
   <script>
-    // Function to handle the click on "Shop Merch" button and scroll to the Merch section
-    document.getElementById('shopMerchButton').addEventListener('click', function(e) {
-      e.preventDefault(); // Prevent the default anchor behavior
-
-      // Smooth scroll to the "Merch" section
+    function showMerchSectionAndButton() {
       document.querySelector('#merch').scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
 
-      // Use a short delay before showing the button
-      setTimeout(function() {
-        document.getElementById('redbubbleShopLink').style.display = 'inline-block'; // Show the button
-      }, 700); // Adjust this delay if necessary
+      setTimeout(function () {
+        document.getElementById('redbubbleShopLink').classList.add('visible');
+      }, 700);
+    }
+
+    document.getElementById('shopMerchButton').addEventListener('click', function (e) {
+      e.preventDefault();
+      showMerchSectionAndButton();
+    });
+
+    document.getElementById('shopMerchLink').addEventListener('click', function (e) {
+      e.preventDefault();
+      showMerchSectionAndButton();
     });
   </script>
 </body>
