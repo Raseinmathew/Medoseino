@@ -111,9 +111,13 @@
       background: #5af;
     }
 
-    .highlight {
-      background-color: #ff0; /* Highlight color */
-      transition: background-color 0.3s;
+    #redbubbleShopLink {
+      display: none; /* Initially hidden */
+      margin-top: 1.5rem;
+    }
+
+    .show-button {
+      display: inline-block;
     }
   </style>
 </head>
@@ -146,8 +150,8 @@
   <section id="merch">
     <h2>Merch</h2>
     <p>Discover unique merchandise crafted with magic and creativity.</p>
-    <!-- Add the Redbubble link here with an ID -->
-    <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button">Visit Our Redbubble Shop</a>
+    <!-- Initially hidden Redbubble button -->
+    <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button show-button">Visit Our Redbubble Shop</a>
   </section>
 
   <section id="ai">
@@ -160,20 +164,18 @@
   </footer>
 
   <script>
-    // Smooth scroll to the "Merch" section and highlight the Redbubble link
+    // Smooth scroll to the "Merch" section and show the Redbubble button
     document.getElementById('shopMerchButton').addEventListener('click', function(e) {
       e.preventDefault();
-      // Smooth scroll to the merch section
+      
+      // Smooth scroll to the "Merch" section
       document.getElementById('merch').scrollIntoView({ behavior: 'smooth' });
       
-      // Add highlight class to the Redbubble button
+      // Show the "Visit Our Redbubble Shop" button after scrolling
       const redbubbleLink = document.getElementById('redbubbleShopLink');
-      redbubbleLink.classList.add('highlight');
-      
-      // Remove highlight after 2 seconds
       setTimeout(() => {
-        redbubbleLink.classList.remove('highlight');
-      }, 2000);
+        redbubbleLink.style.display = 'inline-block'; // Show the button
+      }, 500); // Delay for smooth scroll effect
     });
   </script>
 </body>
