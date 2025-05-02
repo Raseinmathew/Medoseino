@@ -104,7 +104,7 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
-      transition: background 0.3s, opacity 0.5s ease-in-out;
+      transition: background 0.3s, opacity 0.5s ease-in-out, visibility 0s 0.5s;
       opacity: 0;
       visibility: hidden;
     }
@@ -112,6 +112,7 @@
     .merch-button.visible {
       opacity: 1;
       visibility: visible;
+      transition: opacity 0.5s ease-in-out, visibility 0s;
     }
 
     @media (max-width: 768px) {
@@ -136,8 +137,8 @@
   </header>
 
   <section class="hero">
-    <!-- ✅ Make sure this file exists in your repo root -->
-    <img src="logo.png" alt="Medoseino Logo" />
+    <!-- Updated Logo File Name -->
+    <img src="Logo(2).png" alt="Medoseino Logo" />
     <h2>Books & Merch from Another Realm</h2>
     <p>Welcome to Medoseino — a portal to mystical stories and imaginative merchandise.</p>
     <div class="buttons">
