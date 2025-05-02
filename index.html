@@ -150,7 +150,7 @@
   <section id="merch">
     <h2>Merch</h2>
     <p>Discover unique merchandise crafted with magic and creativity.</p>
-    <!-- Redbubble Shop Button (initially hidden) -->
+    <!-- Initially hidden Redbubble button -->
     <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button">Visit Our Redbubble Shop</a>
   </section>
 
@@ -167,15 +167,15 @@
     // Smooth scroll to the "Merch" section and show the Redbubble button
     document.getElementById('shopMerchButton').addEventListener('click', function(e) {
       e.preventDefault();
-      
+
       // Smooth scroll to the "Merch" section
       document.getElementById('merch').scrollIntoView({ behavior: 'smooth' });
-      
+
       // Show the "Visit Our Redbubble Shop" button after scrolling
       const redbubbleLink = document.getElementById('redbubbleShopLink');
-      setTimeout(() => {
+      setTimeout(function() {
         redbubbleLink.style.display = 'inline-block'; // Show the button
-      }, 500); // Delay for smooth scroll effect
+      }, 600); // Added a slight delay after scroll
     });
   </script>
 </body>
