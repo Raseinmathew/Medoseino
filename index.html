@@ -110,15 +110,6 @@
     .merch-button:hover {
       background: #5af;
     }
-
-    #redbubbleShopLink {
-      display: none; /* Initially hidden */
-      margin-top: 1.5rem;
-    }
-
-    .show-button {
-      display: inline-block;
-    }
   </style>
 </head>
 <body>
@@ -126,7 +117,7 @@
     <h1>Medoseino</h1>
     <nav>
       <a href="#books">Books</a>
-      <a href="#merch" id="shopMerchButton">Merch</a>
+      <a href="#merch">Merch</a>
       <a href="#ai">AI Assistant</a>
     </nav>
   </header>
@@ -137,7 +128,7 @@
     <p>Welcome to Medoseino — a portal to mystical stories and imaginative merchandise.</p>
     <div class="buttons">
       <a href="#books">Explore Books</a>
-      <a href="#merch" id="shopMerchLink">Shop Merch</a>
+      <a href="#merch">Shop Merch</a>
       <a href="#ai">Talk to the AI</a>
     </div>
   </section>
@@ -150,8 +141,6 @@
   <section id="merch">
     <h2>Merch</h2>
     <p>Discover unique merchandise crafted with magic and creativity.</p>
-    <!-- Initially hidden Redbubble button -->
-    <a href="https://www.redbubble.com" id="redbubbleShopLink" class="merch-button">Visit Our Redbubble Shop</a>
   </section>
 
   <section id="ai">
@@ -162,21 +151,5 @@
   <footer>
     &copy; 2025 Medoseino. All rights reserved.
   </footer>
-
-  <script>
-    // Smooth scroll to the "Merch" section and show the Redbubble button
-    document.getElementById('shopMerchButton').addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      // Smooth scroll to the "Merch" section
-      document.getElementById('merch').scrollIntoView({ behavior: 'smooth' });
-      
-      // Show the "Visit Our Redbubble Shop" button after scrolling
-      const redbubbleLink = document.getElementById('redbubbleShopLink');
-      setTimeout(() => {
-        redbubbleLink.style.display = 'inline-block'; // Show the button
-      }, 500); // Delay for smooth scroll effect
-    });
-  </script>
 </body>
 </html>
