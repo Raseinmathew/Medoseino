@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Medoseino</title>
   <style>
-    html, body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
       height: 100%;
       width: 100%;
-      background: url('background.png') no-repeat center center fixed;
+      background-image: url('background.png');
       background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -21,13 +28,6 @@
       height: auto;
     }
   </style>
-
-  <!-- Redirect after 3 seconds -->
-  <script>
-    setTimeout(function() {
-      window.location.href = "https://raseinmathew.github.io/Medoseino/#merch";
-    }, 3000); // 3000ms = 3 seconds
-  </script>
 </head>
 <body>
   <img src="logo.png" alt="Medoseino Logo" />
