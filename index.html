@@ -1,70 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Medoseino</title>
   <style>
-    /* Body Styles */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      background-image: url('background.png'); /* Background image */
-      background-size: cover; /* Ensures it covers the full screen */
-      background-position: center; /* Keeps it centered */
-      color: #fff; /* White text */
+      background-image: url('background.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: #fff;
     }
 
-    /* Header Styles */
     header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px;
+      padding: 15px 30px;
+      background-color: rgba(0, 0, 0, 0.7);
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
       z-index: 1000;
     }
 
     header img {
-      height: 50px; /* Adjust the logo size */
-      width: auto;
+      height: 50px;
     }
 
     nav a {
-      color: white;
-      margin: 0 20px;
+      color: #fff;
+      margin-left: 25px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
+      transition: color 0.3s;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #00ffff;
     }
 
-    /* Main Content Styles */
     .content {
-      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 100px;
       padding: 20px;
-    }
-
-    h1, h2 {
-      color: #fff;
+      text-align: center;
     }
 
     .section {
-      margin: 50px 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      padding: 30px;
+      margin: 30px 0;
+      width: 90%;
+      max-width: 800px;
     }
 
-    .section h2 {
-      margin-bottom: 10px;
+    h2 {
+      margin-bottom: 15px;
+      color: #00ffff;
     }
 
-    .section p {
-      font-size: 1.2em;
-      line-height: 1.5;
+    p {
+      font-size: 1.1rem;
     }
 
     footer {
@@ -72,6 +77,10 @@
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.7);
       color: white;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -89,17 +98,17 @@
   <div class="content">
     <div id="books" class="section">
       <h2>Our Books</h2>
-      <p>Explore a variety of books that delve into intriguing topics, from history to mystery and everything in between.</p>
+      <p>Explore our exclusive collection of thought-provoking and immersive books published on Amazon KDP.</p>
     </div>
 
     <div id="merch" class="section">
       <h2>Merchandise</h2>
-      <p>Get your hands on exclusive Medoseino merch, featuring unique designs and high-quality prints.</p>
+      <p>Shop our unique, AI-inspired t-shirt designs available now on Redbubble. Trendy, creative, and one of a kind!</p>
     </div>
 
     <div id="ai" class="section">
       <h2>AI Assistant</h2>
-      <p>Meet the AI assistant, your personal guide through the world of Medoseino, helping you find the best books and merch!</p>
+      <p>Have questions? Our AI assistant is here to help guide you through everything Medoseino has to offer.</p>
     </div>
   </div>
 
