@@ -14,12 +14,13 @@
     body, html {
       height: 100%;
       width: 100%;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
+      scroll-behavior: smooth;
     }
 
     .landing {
       height: 100vh;
-      background: url('background.png') no-repeat center center fixed;
+      background: url('background.png') no-repeat center center;
       background-size: cover;
       display: flex;
       flex-direction: column;
@@ -28,52 +29,43 @@
     }
 
     .landing img {
-      width: 200px;
-      height: auto;
+      width: 180px;
     }
 
     .shop-button {
       margin-top: 20px;
-      padding: 12px 24px;
-      font-size: 16px;
-      background-color: black;
+      padding: 10px 20px;
+      background: black;
       color: white;
+      border: none;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
-
-    .shop-button:hover {
-      background-color: #333;
+      font-size: 16px;
+      border-radius: 6px;
     }
 
     #merch {
       padding: 100px 20px;
-      background: #f5f5f5;
-      min-height: 100vh;
+      background: #fff;
       text-align: center;
+      min-height: 100vh;
     }
 
     #merch h2 {
-      font-size: 32px;
-      margin-bottom: 30px;
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
-
-    /* Add your merch items styling here */
   </style>
 </head>
 <body>
 
-  <!-- Landing Section -->
   <div class="landing">
     <img src="logo.png" alt="Medoseino Logo" />
     <a href="#merch" class="shop-button">Shop Now</a>
   </div>
 
-  <!-- Merch Section -->
   <section id="merch">
     <h2>Our Merchandise</h2>
-    <!-- Add your T-shirts or book embeds here -->
+    <!-- Add your products or embeds here -->
   </section>
 
 </body>
