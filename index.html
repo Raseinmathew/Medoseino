@@ -2,71 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Medoseino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medoseino | Books & Merch from Another Realm</title>
   <style>
-    * {
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      background-color: #111;
+      color: #fff;
     }
 
-    body, html {
-      height: 100%;
-      width: 100%;
-      font-family: sans-serif;
-      scroll-behavior: smooth;
-    }
-
-    .landing {
-      height: 100vh;
-      background: url('background.png') no-repeat center center;
-      background-size: cover;
+    header {
+      background: #1e1e1e;
+      padding: 1rem 2rem;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
     }
 
-    .landing img {
-      width: 180px;
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+      color: #39f;
     }
 
-    .shop-button {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background: black;
-      color: white;
-      border: none;
+    nav a {
+      color: #ccc;
+      margin-left: 1.5rem;
       text-decoration: none;
-      font-size: 16px;
-      border-radius: 6px;
     }
 
-    #merch {
-      padding: 100px 20px;
-      background: #fff;
+    nav a:hover {
+      color: #fff;
+    }
+
+    .hero {
+      padding: 4rem 2rem;
       text-align: center;
-      min-height: 100vh;
+      background: url('background.png') no-repeat center center;
+      background-size: cover;
+      position: relative;
     }
 
-    #merch h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6); /* optional dark overlay for readability */
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero img {
+      width: 150px;
+      margin-bottom: 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      padding: 0.8rem 1.5rem;
+      margin: 0.5rem;
+      background: #39f;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .buttons a:hover {
+      background: #5af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Medoseino</h1>
+    <nav>
+      <a href="#books">Books</a>
+      <a href="#merch">Merch</a>
+      <a href="#ai">AI Assistant</a>
+    </nav>
+  </header>
 
-  <div class="landing">
-    <img src="logo.png" alt="Medoseino Logo" />
-    <a href="#merch" class="shop-button">Shop Now</a>
-  </div>
-
-  <section id="merch">
-    <h2>Our Merchandise</h2>
-    <!-- Add your products or embeds here -->
-  </section>
-
-</body>
-</html>
+  <section class="hero">
