@@ -1,175 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medoseino | Books & Merch from Another Realm</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0d0d0d;
-      color: #f0f0f0;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #111;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #333;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      color: #39f;
-    }
-
-    nav a {
-      color: #aaa;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    .hero {
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.png') center/cover no-repeat;
-      text-align: center;
-      padding: 6rem 2rem;
-    }
-
-    .hero h2 {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero p {
-      max-width: 600px;
-      margin: 0 auto 2rem auto;
-      font-size: 1.2rem;
-    }
-
-    .buttons a {
-      display: inline-block;
-      background: #39f;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      margin: 0.5rem;
-      border-radius: 6px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s;
-    }
-
-    .buttons a:hover {
-      background: #5af;
-    }
-
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #333;
-    }
-
-    .merch-button {
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.75rem 1.5rem;
-      background: #39f;
-      color: #000;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s, opacity 0.5s ease-in-out;
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .merch-button.visible {
-      opacity: 1;
-      visibility: visible;
-    }
-
-    @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .buttons a {
-        padding: 0.5rem 1rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medoseino</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>Medoseino</h1>
-    <nav>
-      <a href="#books">Books</a>
-      <a href="#merch" id="shopMerchButton">Merch</a>
+<body class="bg-black text-white">
+
+  <!-- Navbar -->
+  <header class="flex justify-between items-center p-6 bg-black">
+    <h1 class="text-2xl font-bold text-blue-500">Medoseino</h1>
+    <nav class="space-x-6 text-white">
+      <a href="#books" class="hover:text-blue-400">Books</a>
+      <a href="#merch" class="hover:text-blue-400">Merch</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <h2>Books & Merch from Another Realm</h2>
-    <p>Welcome to Medoseino — a portal to mystical stories and imaginative merchandise.</p>
-    <div class="buttons">
-      <a href="#books">Explore Books</a>
-      <a href="#merch" id="shopMerchLink">Shop Merch</a>
+  <!-- Hero Section -->
+  <section
+    class="relative h-screen bg-center bg-no-repeat bg-contain flex flex-col items-center justify-center"
+    style="background-image: url('/path/to/background.png.png');"
+  >
+    <div class="mt-32 text-center"> <!-- pushes content lower -->
+      <h2 class="text-5xl font-extrabold mb-10">Books & Merch from Another Realm</h2>
+      
+      <!-- Buttons -->
+      <div class="flex justify-center space-x-6 mt-20">
+        <a href="#books" class="px-6 py-3 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition">
+          Explore Books
+        </a>
+        <a href="#merch" class="px-6 py-3 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition">
+          Shop Merch
+        </a>
+      </div>
     </div>
   </section>
 
-  <section id="books">
-    <h2>Books</h2>
-    <p>Dive into original tales and epic adventures from otherworldly realms.</p>
+  <!-- Books Section -->
+  <section id="books" class="py-20 bg-black text-center">
+    <h3 class="text-3xl font-bold mb-4">Books</h3>
+    <p class="text-gray-300">Dive into original tales and epic adventures from otherworldly realms.</p>
   </section>
 
-  <section id="merch">
-    <h2>Merch</h2>
-    <p>Discover unique merchandise crafted with magic and creativity.</p>
-    <a href="https://www.redbubble.com/people/Medoseino/shop?asc=u" id="redbubbleShopLink" class="merch-button">Visit Our Redbubble Shop</a>
+  <!-- Merch Section -->
+  <section id="merch" class="py-20 bg-black text-center">
+    <h3 class="text-3xl font-bold mb-4">Merch</h3>
+    <p class="text-gray-300">Explore merchandise inspired by fantastical stories and symbols.</p>
   </section>
 
-  <footer>
-    &copy; 2025 Medoseino. All rights reserved.
-  </footer>
-
-  <script>
-    function showMerchSectionAndButton() {
-      document.querySelector('#merch').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => {
-        document.getElementById('redbubbleShopLink').classList.add('visible');
-      }, 700);
-    }
-
-    document.getElementById('shopMerchButton').addEventListener('click', function (e) {
-      e.preventDefault();
-      showMerchSectionAndButton();
-    });
-
-    document.getElementById('shopMerchLink').addEventListener('click', function (e) {
-      e.preventDefault();
-      showMerchSectionAndButton();
-    });
-  </script>
 </body>
 </html>
