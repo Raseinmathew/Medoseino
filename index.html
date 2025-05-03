@@ -119,6 +119,7 @@
       }
     }
 
+    /* Chatbox styles */
     .chatbox {
       position: fixed;
       bottom: 90px;
@@ -148,16 +149,16 @@
     }
 
     #userInput {
+      flex: 1;
       padding: 6px;
       background: #222;
       color: #fff;
       border: 1px solid #444;
       border-radius: 6px;
-      flex: 1;
     }
 
     #sendMessage {
-      margin-top: 5px;
+      margin-left: 5px;
       padding: 6px 12px;
       background: #39f;
       color: #000;
@@ -210,34 +211,37 @@
   <!-- AI Chatbox -->
   <div id="chatWidget" class="chatbox">
     <div id="chatMessages" class="chat-messages"></div>
-    <input id="userInput" type="text" placeholder="Ask about our dresses..." />
-    <button id="sendMessage">Send</button>
+    <div style="display: flex;">
+      <input id="userInput" type="text" placeholder="Ask about our dresses..." />
+      <button id="sendMessage">Send</button>
+    </div>
   </div>
 
   <script>
     function showMerchSectionAndButton() {
       document.querySelector('#merch').scrollIntoView({ behavior: 'smooth', block: 'start' });
-      setTimeout(() => document.getElementById('redbubbleShopLink').classList.add('visible'), 700);
+      setTimeout(() => {
+        document.getElementById('redbubbleShopLink').classList.add('visible');
+      }, 700);
     }
 
-    document.getElementById('shopMerchButton').addEventListener('click', e => {
+    document.getElementById('shopMerchButton').addEventListener('click', function (e) {
       e.preventDefault();
       showMerchSectionAndButton();
     });
 
-    document.getElementById('shopMerchLink').addEventListener('click', e => {
+    document.getElementById('shopMerchLink').addEventListener('click', function (e) {
       e.preventDefault();
       showMerchSectionAndButton();
     });
 
-    const talkToAI = document.querySelectorAll('a[href="#ai"]');
     const chatWidget = document.getElementById("chatWidget");
+    const chatMessages = document.getElementById("chatMessages");
     const userInput = document.getElementById("userInput");
     const sendMessageBtn = document.getElementById("sendMessage");
-    const chatMessages = document.getElementById("chatMessages");
 
-    talkToAI.forEach(btn => {
-      btn.addEventListener("click", (e) => {
+    document.querySelectorAll('a[href="#ai"]').forEach(link => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
         chatWidget.style.display = chatWidget.style.display === "none" ? "flex" : "none";
       });
@@ -246,8 +250,10 @@
     sendMessageBtn.addEventListener("click", async () => {
       const userMsg = userInput.value.trim();
       if (!userMsg) return;
+
       chatMessages.innerHTML += `<div><strong>You:</strong> ${userMsg}</div>`;
       userInput.value = "";
+
       const reply = await getAIReply(userMsg);
       chatMessages.innerHTML += `<div><strong>AI:</strong> ${reply}</div>`;
       chatMessages.scrollTop = chatMessages.scrollHeight;
@@ -266,7 +272,7 @@
             messages: [
               {
                 role: "system",
-                content: "You are Medoseino’s merch assistant. Only reply with dress and store information. Do not answer unrelated questions. If unsure, say: 'I’m here to help with Medoseino merch and dress details! For other questions, please explore our site.'"
+                content: "You are Medoseino’s merch assistant. Only reply with dress and store information. Do not answer unrelated questions. If unsure, say: ‘I’m here to help with Medoseino merch and dress details! For other questions, please explore our site.’"
               },
               {
                 role: "user",
@@ -277,7 +283,7 @@
         });
 
         const data = await response.json();
-        return data.choices[0].message.content || "AI did not return a message.";
+        return data.choices[0].message.content;
       } catch (err) {
         console.error(err);
         return "Sorry, something went wrong while connecting to the AI.";
